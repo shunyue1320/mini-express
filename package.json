@@ -1,0 +1,12 @@
+{
+  "name": "mini-express",
+  "version": "1.0.0",
+  "description": "手写 express",
+  "main": "index.js",
+  "repository": "https://github.com/shunyue1320/my-express.git",
+  "author": "shunyue1320",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
