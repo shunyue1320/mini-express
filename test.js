@@ -1,5 +1,5 @@
-const express = require('express')
-// const express = require('./express') // 自己实现的 express
+// const express = require('express')
+const express = require('./express') // 自己实现的 express
 
 const app = express()
 
@@ -21,6 +21,11 @@ app.get('/', function(req, res, next) {
   next()
 }, function(req, res, next) {
   console.log(111)
+  next()
+})
+
+app.get('/', function(req, res, next) {
+  console.log(1.1)
   next()
 })
 

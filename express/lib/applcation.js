@@ -46,14 +46,17 @@ Application.prototype.use = function() {
 }
 
 // 遍历创建所有请求监听方法放在 express 上  有：app.get, app.post ...
-methods.forEach((methods) => {
+methods.forEach((method) => {
   Application.prototype[method] = function(pathname, ...handlers) {
     this.lazy_route()
-    this.router[method](pathname, handlers)
+    this.router[method](pathname, handlers) // 内部其实就是调用 router.get, router.post ...
   }
 })
 
 Application.prototype.listen = function () {
+  console.log("========||======", this.router.stack)
+  console.log("========||======", this.router.stack[3].route.stack)
+  console.log("========||======", JSON.stringify(this.router.stack))
   const server = http.createServer((req, res) => {
     function done() {
       res.end(`Canont ${req.method} ${req.url}`)
