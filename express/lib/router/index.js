@@ -20,6 +20,7 @@ proto.use = function(handler) {
   let path = '/'   // path 默认为 /
   if (typeof handler !== 'function') {
     offset = 1
+    path = handler
   }
 
   // 拿到所有中间件方法 遍历存到 stack 中

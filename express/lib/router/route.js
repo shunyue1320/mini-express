@@ -38,7 +38,7 @@ methods.forEach(method => {
       layer.method = method
       this.stack.push(layer) // 里层的route存放的是用户的真实回调， 并且每个layer上有标记对应的方法
     })
-    console.log("=====this.stack===", this.stack)
+    // console.log("=====this.stack===", this.stack)
     this.methods[method] = true // 增加存储的方法标识 { get: true }
   }
 })

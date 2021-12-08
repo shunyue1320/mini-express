@@ -1,7 +1,9 @@
 // const express = require('express')
-const express = require('./express') // 自己实现的 express
+const express = require('./express2') // 自己实现的 express
 
 const app = express()
+
+const router = express.Router();
 
 app.use((eq, res, next) => {
   console.log('中间件1')
@@ -33,6 +35,15 @@ app.get('/', function(req, res, next) {
   console.log(2)
   res.end('end')
 })
+
+// 路由
+router.get('/add',function(req,res,next){
+  res.end('添加');
+})
+router.post('/remove',function(req,res,next){
+  res.end('删除')
+})
+app.use('/user',router);
 
 
 app.listen(3000, () => {

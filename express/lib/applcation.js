@@ -55,7 +55,7 @@ methods.forEach((method) => {
 
 Application.prototype.listen = function () {
   console.log("========||======", this.router.stack)
-  console.log("========||======", this.router.stack[3].route.stack)
+  console.log("========||======", this.router.stack[this.router.stack.length - 1].handler)
   console.log("========||======", JSON.stringify(this.router.stack))
   const server = http.createServer((req, res) => {
     function done() {

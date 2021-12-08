@@ -4,7 +4,7 @@ function Layer(path, handler) {
   this.path = path
   this.handler = handler
   // 所有的layer中都会存放路径 ， 我就将这个路径转成正则
-  this.keys= []
+  this.keys = []
   this.regExp = pathToRegExp(this.path, this.keys, true)
 }
 
